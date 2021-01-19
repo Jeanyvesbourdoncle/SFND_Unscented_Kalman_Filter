@@ -4,6 +4,14 @@
 #include "Eigen/Dense"
 #include "measurement_package.h"
 
+// #include "measurement_package.h"
+// #include "Eigen/Dense"
+// #include <vector>
+// #include <string>
+// #include <fstream>
+// #include <iostream>
+// using namespace std;
+
 class UKF {
  public:
   /**
@@ -43,7 +51,7 @@ class UKF {
 
 
   // initially set to false, set to true in first call of ProcessMeasurement
-  bool is_initialized_;
+  bool is_initialized_=false;
 
   // if this is false, laser measurements will be ignored (except for init)
   bool use_laser_;
@@ -95,6 +103,7 @@ class UKF {
 
   // Sigma point spreading parameter
   double lambda_;
+
 };
 
 #endif  // UKF_H
